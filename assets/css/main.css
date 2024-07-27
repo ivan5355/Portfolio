@@ -64,11 +64,11 @@ footer, header, hgroup, menu, nav, section {
 		font-family: 'Roboto', sans-serif;
 		line-height: 1.6; /* Adjust for readability */
 	}
-	
-	
+
 	h2 {
 		font-size: 2.5em; /* Larger header */
-		margin-bottom: 1.2em;  
+		margin-top: 0.2em; /* Reduced top margin */
+		margin-bottom: 0.2em; /* Reduced bottom margin */
 		letter-spacing: 0.05em; /* Subtler letter spacing */
 	}
 	
@@ -80,16 +80,58 @@ footer, header, hgroup, menu, nav, section {
 	p {
 		margin-bottom: 1.5em;
 	}
-
+  
+.container {
+	max-width: 1200px; /* Adjust to your desired width */
+	margin: 0 auto; /* Center the container */
+	padding: 0 20px; /* Add some padding on the sides */
+}
 
 #main > section {
 	padding-top: 0; 
 	margin-top: 0;   
 }
-	
 
+#portfolio .project-skills {
+    margin-top: 15px;
+    text-align: center;  /* Center align the entire skill section */
+}
+
+#portfolio .project-skills ul {
+    justify-content: center; /* Center skills within the flex container */
+}
+
+#about header {
+	margin-top: -60px;
+	margin-bottom: 0px;
+}
+
+#about .course-list li {
+    /* ... (Existing styles) ... */
+    display: flex;          /* Use flexbox for icon alignment */
+    align-items: center;    /* Vertically align icon and text */
+}
+
+#about .course-list li i {
+    margin-right: 10px;  /* Add space between icon and text */
+    font-size: 1.2em;     /* Slightly larger icon size */
+}
+
+#portfolio header h2{
+	margin-bottom: -30px;
+}
+	
 #main > section > .container {
 	padding-top: 20px; 
+}
+#main > section.two {
+    padding-top: 0;   /* Remove top padding */
+    margin-top: 0;    /* Remove top margin */
+}
+
+#main > section.two > .container {
+    padding-top: 0;   /* Remove top padding */
+    margin-top: 30px;    /* Remove top margin */
 }
 
 .skill-bar {
@@ -104,6 +146,12 @@ footer, header, hgroup, menu, nav, section {
     border-radius: 3px; /* Smaller border radius for a sleeker look */
 }
 
+
+
+#portfolio {
+    margin-top: 0;
+    padding-top: 0;
+}
 
 #portfolio p { /* General paragraph styling (before project descriptions) */
     font-size: 1em; 
@@ -128,6 +176,33 @@ footer, header, hgroup, menu, nav, section {
     font-size: 0.95em;
     line-height: 1.45;
     margin-bottom: 0px; /* Remove extra margin at the end of descriptions */
+}
+
+#portfolio .project-skills {
+    margin-top: 15px;
+}
+
+#portfolio .project-skills h4 {  /* Style the "Skills Used" heading */
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#portfolio .project-skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;     /* Use flexbox for better alignment */
+    flex-wrap: wrap;    /* Allow skills to wrap to multiple lines */
+}
+
+#portfolio .project-skills li {
+    background-color: #e8f0fe;
+    color: #333;
+    padding: 8px 12px; /* Increase padding for better readability */
+    margin: 5px;       /* Add margin between skill items */
+    border-radius: 20px;  /* More rounded corners */
+    font-size: 0.9em; 
+    font-weight: 500;  /* Slightly bolder text */
 }
 
 
@@ -272,10 +347,10 @@ input, select, textarea {
 		outline: 0;
 	}
 
-		a:hover {
-			color: #E27689;
-			border-bottom-color: rgba(255, 255, 255, 0);
-		}
+	a:hover {
+		color: #E27689;
+		border-bottom-color: rgba(255, 255, 255, 0);
+	}
 
 	sub {
 		position: relative;
