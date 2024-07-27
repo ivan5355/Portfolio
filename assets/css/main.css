@@ -117,6 +117,37 @@ footer, header, hgroup, menu, nav, section {
     font-size: 1.2em;     /* Slightly larger icon size */
 }
 
+
+.courses_list {
+    text-align: center; /* Center text inside the container */
+    padding: 10px;
+}
+
+.course-cols {
+    display: flex;
+    justify-content: center; /* Center the columns horizontally */
+    flex-wrap: wrap;
+    gap: 20px; /* Optional: adds space between the columns */
+}
+
+.course-col {
+    flex: 1;
+    min-width: 200px; /* Adjust based on your design */
+    padding: 10px;
+}
+
+
+
+
+
+
+/* Optional: Adjust for responsiveness */
+@media (max-width: 768px) { 
+    .row {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
 #portfolio header h2{
 	margin-bottom: -30px;
 }
@@ -203,6 +234,10 @@ footer, header, hgroup, menu, nav, section {
     border-radius: 20px;  /* More rounded corners */
     font-size: 0.9em; 
     font-weight: 500;  /* Slightly bolder text */
+}
+
+#about h3{
+	text-align: center;
 }
 
 
