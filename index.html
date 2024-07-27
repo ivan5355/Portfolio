@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ivan Stadnik Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<title>Rutgers to NJ Community College Course Equivalency Lookup</title>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	</head>
+	<style>
+      
+    </style>
+
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Ivan Stadnik</h1>
+							<p>Aspiring Software Developer</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Hi! I'm Ivan</h2>
+								<p>I am a senior at Rutgers and aspiring to be a backend software engineer. I am proficient in Java, Python, Flask, Express.js, and working with REST APIs. With my skills, I aim to streamline tasks for the user and provide useful insights. </p>
+							</header>
+
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+				<div id="headerToggle">
+					<a href="#header" class="toggle"></a> 
+				</div>
+					
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>About Me</h2>
+							</header>
+
+							<div class="container">
+								<div class="skill-bar">
+									<div class="skill">Java</div>
+									<div class="bar" style="--skill-level: 80%;">
+										<span></span>
+									</div>
+								</div>
+								<div class="skill-bar">
+									<div class="skill">Python</div>
+									<div class="bar" style="--skill-level: 60%;">
+										<span></span>
+									</div>
+								</div>
+								<div class="skill-bar">
+									<div class="skill">Flask</div>
+									<div class="bar" style="--skill-level: 60%;">
+										<span></span>
+									</div>
+								</div>
+								<div class="skill-bar">
+									<div class="skill">Express.js</div>
+									<div class="bar" style="--skill-level: 40%;">
+										<span></span>
+									</div>
+								</div>
+								<div class="skill-bar">
+									<div class="skill">REST APIs</div>
+									<div class="bar" style="--skill-level: 60%;">
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</section>
+					<section id="portfolio" class="two">
+						<div class="container">
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+							<p>Here are some of my recent projects that showcase my skills and experience.</p>
+							<div class="row">
+								<div class="col-6 col-12-mobile">
+									<article class="item">
+										<header>
+											<h3><a href="https://github.com/ivan5355/RUEquivalent" target="_blank" rel="noopener noreferrer">RUEquivalent <i class="fab fa-github"></i></a></h3>
+
+										</header>
+										<p>
+											I developed a website designed to streamline the process for Rutgers students seeking course equivalencies across New Jersey's 18 community colleges.
+											This platform significantly reduces the time students would otherwise spend navigating the NJ Transfer website, where they must manually search and 
+											scroll through numerous combinations of community colleges to identify the correct course equivalencies. To implement the website, I found the Rutgers 
+											courses API in json format. Then I used Selenium and beatiful soup to scrape the course equivalencies from the NJ Website. I used Open AI's GPT 3.5 model 
+											to generate course descriptions and the Google MAPS to get the distance from each community college  to the user location. One of the challenges that I faced
+											scraping course equivalencies from the NJ Transfer website. I was attempting to submit a post request to the website to get the course equivalencies, but I was 
+											getting the same response. Eventually, I used Selenium to click the button, which resolved the issue. This project has taught me to be resourceful and to be willing
+											to try different approaches to solve a problem, even if it doesn't apear that the new approach will resolve the issue. </p>
+										</p>
+										<div class="project-skills">
+											<h4>Skills Used:</h4>
+											<ul>
+												<li>Python</li>
+												<li>Flask</li>
+												<li>Selenium</li>
+												<li>Beautiful Soup</li>
+												<li>OpenAI API</li>
+												<li>Google Maps API</li>
+											</ul>
+
+									</article>
+								</div>
+								<div class="col-6 col-12-mobile">
+									<article class="item">
+										<header>
+											<h3><a href="https://github.com/ivan5355/Fire-Extinguishing-Bot" target="_blank" rel="noopener noreferrer">Fire Extinguishing Bot<i class="fab fa-github"></i></a></h3>
+										
+										</header>
+										<p>In this project, I tested various bots navigating a maze to reach a button while dealing with a spreading fire, using different algorithms to handle the challenge.
+											Bot 1 employs Breadth-First Search (BFS) to plan a static path to the button, avoiding only the initial fire cell and ignoring the spread of fire. Bot 2 also uses
+											BFS but adapts dynamically by re-planning the shortest path at each step, avoiding current fire cells. Bot 3 further refines this approach by considering both current 
+											and adjacent fire cells when re-planning, and if no viable path is found, it resorts to planning based on the current fire cells. Bot 4 utilizes the A* algorithm with a
+											Pythagorean heuristic to re-plan the path at each step, effectively navigating around current fire cells. This setup allows for a comparison of how each algorithm performs 
+											in adapting to a dynamic, changing environment.
+										</p>
+
+									</article>
+								</div>
+							</div>
+					
+							<div class="row">
+								<div class="col-6 col-12-mobile">
+									<article class="item">
+										<header>
+											<h3>Project 3: [Project Name]</h3>
+										</header>
+										<p>[Brief description of the project, technologies used, and your role]</p>
+									</article>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p>Elementum sem parturient nulla quam placerat viverra
+							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
+							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
+							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
+
+							<form method="post" action="#">
+								<div class="row">
+									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="col-12">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="col-12">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
