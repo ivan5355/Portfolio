@@ -56,6 +56,7 @@ section, summary, time, mark, audio, video {
 		}
 	}
 
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
@@ -135,10 +136,6 @@ footer, header, hgroup, menu, nav, section {
     min-width: 200px; /* Adjust based on your design */
     padding: 10px;
 }
-
-
-
-
 
 
 /* Optional: Adjust for responsiveness */
