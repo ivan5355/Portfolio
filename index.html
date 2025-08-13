@@ -710,6 +710,71 @@
                 padding: 2rem;
             }
         }
+        
+        /* Hobbies Section */
+        .hobbies {
+            background: linear-gradient(135deg, #f8fafc 0%, #eaeff7 100%);
+        }
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .hobby-card {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hobby-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+        .hobby-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.12);
+        }
+        .hobby-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            background: rgba(102,126,234,0.1);
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(102,126,234,0.25);
+            margin-bottom: 0.75rem;
+        }
+        .hobby-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.35rem;
+        }
+        .hobby-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .hobbies-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        /* Tweak timeline list spacing for bullets */
+        .timeline-description { margin-left: 1rem; padding-left: 1rem; }
     </style>
 </head>
 <body>
@@ -725,6 +790,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#timeline">Timeline</a></li>
                 <li><a href="#awards">Awards</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -927,8 +993,8 @@
                         <div class="timeline-date">July–August 2025</div>
                         <div class="timeline-title"><img class="timeline-logo logo-large" src="images/SSB logo.png" alt="Summer Springboard logo">Summer Springboard - Mentor</div>
                         <ul class="timeline-description">
-                            <li>Led interactive sessions on college readiness and career exploration for groups of 10–20 high school students at Duke University and UC San Diego.</li>
-                            <li>Delivered individualized mentorship to students, supporting their academic goals and contributing to improved decision-making.</li>
+                            <li>Led interactive sessions on college readiness and career exploration for groups of 10–20 high school students at Duke University and UC San Diego</li>
+                            <li>Delivered individualized mentorship to students, supporting their academic goals and contributing to improved decision-making</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -939,8 +1005,8 @@
                         <div class="timeline-date">May–Jun 2025</div>
                         <div class="timeline-title"><img class="timeline-logo logo-wordmark" src="images/Cognizant logo.jpeg" alt="Cognizant logo">Cognizant - Generative AI Extern</div>
                         <ul class="timeline-description">
-                            <li>Selected for competitive Generative AI Externship focused on Python programming, LLMs, and real-world AI applications.</li>
-                            <li>Developed GenAI solutions using prompt engineering and ethical AI practices, progressing toward Cognizant Skills Accelerator badges in Python and Generative AI.</li>
+                            <li>Selected for a competitive Generative AI Externship focused on Python programming, LLMs, and real-world AI applications</li>
+                            <li>Developed GenAI solutions using prompt engineering and ethical AI practices, progressing toward Cognizant Skills Accelerator badges in Python and Generative AI</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -962,8 +1028,8 @@
                         <div class="timeline-date">Sep–Oct 2024</div>
                         <div class="timeline-title">aiRESULTS - Software Engineer Intern</div>
                         <ul class="timeline-description">
-                            <li>Engineered microservices-based RESTful API for Customer Loyalty System using Go, MongoDB, and Docker.</li>
-                            <li>Architected API endpoints and data pipelines for future TensorFlow ML model integration, enabling predictive insights into customer behavior and ROI.</li>
+                            <li>Engineered microservices-based RESTful API for Customer Loyalty System using Go, MongoDB, and Docker</li>
+                            <li>Architected API endpoints and data pipelines for future TensorFlow ML model integration, enabling predictive insights into customer behavior and ROI</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -974,8 +1040,8 @@
                         <div class="timeline-date">Aug–Sep 2024</div>
                         <div class="timeline-title">SilkyAI - Software Engineer Intern</div>
                         <ul class="timeline-description">
-                            <li>Architected cost-efficient web platform for AI-powered recipe suggestions using Gemini Flash 1.5 and Spoonacular API.</li>
-                            <li>Built comprehensive inventory tracking, meal planning features, and RESTful API with MongoDB for user profiles and dietary preferences.</li>
+                            <li>Architected cost-efficient web platform for AI-powered recipe suggestions using Gemini Flash 1.5 and Spoonacular API</li>
+                            <li>Built comprehensive inventory tracking, meal planning features, and RESTful API with MongoDB for user profiles and dietary preferences</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -986,8 +1052,8 @@
                         <div class="timeline-date">Feb–Apr 2023</div>
                         <div class="timeline-title">Rutgers Blueprint - Backend Software Engineering Fellow</div>
                         <ul class="timeline-description">
-                            <li>Selected from hundreds of applicants to join a cohort of approximately 20 fellows.</li>
-                            <li>Gained hands‑on experience with HTTP request/response protocols, RESTful APIs, web sockets, and user authentication mechanisms, enhancing secure client‑server communication.</li>
+                            <li>Selected from hundreds of applicants to join a cohort of approximately 20 fellows</li>
+                            <li>Gained hands‑on experience with HTTP request/response protocols, RESTful APIs, web sockets, and user authentication mechanisms, enhancing secure client‑server communication</li>
                         </ul>
                     </div>
                     <div class="timeline-dot"></div>
@@ -1047,6 +1113,35 @@
                         </div>
                         <div class="award-date">Oct 2023</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <div class="container">
+            <h2 class="section-title animate-in">Hobbies</h2>
+            <div class="hobbies-grid">
+                <div class="hobby-card animate-in">
+                    <div class="hobby-icon">🥊</div>
+                    <h3 class="hobby-title">Watching UFC</h3>
+                    <p class="hobby-desc">I enjoy watching the strategy, hard work, and discipline from the highest‑level martial art athletes.</p>
+                </div>
+                <div class="hobby-card animate-in">
+                    <div class="hobby-icon">🏀</div>
+                    <h3 class="hobby-title">Playing Basketball</h3>
+                    <p class="hobby-desc">Pick‑up games are a fun way of doing cardio and improving my skills. I also enjoy the teamwork and the competitiveness of basketball.</p>
+                </div>
+                <div class="hobby-card animate-in">
+                    <div class="hobby-icon">🏋️‍♂️</div>
+                    <h3 class="hobby-title">Lifting</h3>
+                    <p class="hobby-desc">I train consistently, focusing on strength.</p>
+                </div>
+                <div class="hobby-card animate-in">
+                    <div class="hobby-icon">🌅</div>
+                    <h3 class="hobby-title">Beautiful Views</h3>
+                    <p class="hobby-desc">I love unwinding outdoors and taking in sunsets and scenic trails.</p>
                 </div>
             </div>
         </div>
@@ -1121,6 +1216,9 @@
                 this.style.transform = 'translateY(0) scale(1)';
             });
         });
+
     </script>
+
 </body>
+
 </html>
