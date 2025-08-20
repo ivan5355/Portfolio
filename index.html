@@ -459,7 +459,7 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -519,6 +519,20 @@
         
         .project-link:hover {
             color: #990026;
+        }
+        
+        /* Newly added: project image style */
+        .project-image {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            margin: 1rem 0;
+        }
+        
+        /* Make projects section wider to fit larger cards */
+        #projects .container {
+            max-width: 1400px;
         }
         
         /* Contact Section */
@@ -916,6 +930,7 @@
                      semantic search that understands search meaning rather than just keywords 
                      (unlike the current Rutgers course search system), and course equivalency discovery 
                      that shows the nearest transferable courses from over <strong>240,000 course equivalencies</strong> from New Jersey's community colleges. This saves users <strong>10+ minutes</strong> of research time they would otherwise spend searching on the NJ Transfer website.</p>
+                    <img src="images/RUCourseFinder.png" alt="RUCourseFinder screenshot" class="project-image">
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">FastAPI</span>
@@ -935,6 +950,7 @@
                 <div class="project-card animate-in">
                     <h3>RUPreReq</h3>
                     <p>RUPreReq is a web-based tool designed to help Rutgers University students easily identify and plan for course prerequisites. It simplifies academic planning by visually mapping out prerequisite chains across <strong>150+ Rutgers subjects</strong>, showing which courses are required before enrolling in a desired class. Overall, RUPreReq empowers students to make informed decisions and streamline their path to graduation.</p>
+                    <img src="images/RUPreReq.png" alt="RUPreReq screenshot" class="project-image">
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Pandas</span>
@@ -949,6 +965,7 @@
                     <div class="project-card animate-in">
                       <h3>RUHelp</h3>
                       <p>RUHelp is a chatbot designed to assist students by answering questions about courses, degree requirements, university policies, and other academic information at Rutgers University. It leverages Retrieval‑Augmented Generation (RAG) to provide accurate, context‑aware responses grounded in Rutgers catalog data. <strong>It's like having an academic advisor at your fingertips.</strong></p>
+                    <img src="images/RUHelp.png" alt="RUHelp screenshot" class="project-image">
                     <div class="project-tech">
                         <span class="tech-tag">RAG</span>
                         <span class="tech-tag">Python</span>
@@ -966,9 +983,10 @@
                      </div>
                 </div>
 
+                <!-- Temporarily hidden RUSwapping project
                 <div class="project-card animate-in">
                     <h3>RUSwapping</h3>
-                    <p>RUSwapping helps Rutgers students swap rooms by collecting each student's current residence and their first, second, and third preferences, then matching students based on mutual preferences to propose optimal swaps.</p>
+                    <p>RUSwapping is designed to connect Rutgers students who want to swap rooms. Currently, there are two ways students can participate in room swaps. The first method allows students to list their top three preferred rooms they'd like to swap into. The second method lets students specify just one room they are interested in, and if they choose this option, they also agree to potentially be part of a three-way swap arrangement.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Flask</span>
@@ -980,6 +998,7 @@
                         <a href="https://github.com/ivan5355/RUSwapping" class="project-link">GitHub</a>
                     </div>
                 </div>
+                -->
 
             
             </div>
