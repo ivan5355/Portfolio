@@ -793,19 +793,57 @@
         /* Tweak timeline list spacing for bullets */
         .timeline-description { margin-left: 1rem; padding-left: 1rem; }
 
-        /* Chatbot Section */
-        .chatbot {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        /* Agent Floating Launcher and Modal */
+        .chat-fab {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(45deg, #cc0033, #990026);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 10px 24px rgba(204, 0, 51, 0.35);
+            cursor: pointer;
+            z-index: 1100;
         }
-        .chatbot-card {
-            background: white;
-            border-radius: 16px;
-            padding: 1.25rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        .chat-fab:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(204, 0, 51, 0.45); }
+
+        .chat-modal {
+            position: fixed;
+            right: 22px;
+            bottom: 84px;
+            width: min(92vw, 420px);
+            z-index: 1099;
+            display: none;
+        }
+        .chat-modal.open { display: block; }
+        .chat-modal-content {
+            width: 100%;
+            background: #fff;
             border: 1px solid #e9ecef;
-            max-width: 800px;
-            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+            padding: 16px;
         }
+        .chat-modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .chat-close {
+            border: none;
+            background: transparent;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 4px 8px;
+            color: #475569;
+        }
+
+        /* Shared chat UI styles */
         .chat-messages {
             height: 420px;
             overflow-y: auto;
@@ -817,68 +855,17 @@
             border-radius: 12px;
             background: #f8fafc;
         }
-        .message {
-            max-width: 80%;
-            padding: 0.6rem 0.9rem;
-            border-radius: 12px;
-            line-height: 1.5;
-            font-size: 0.98rem;
-            word-wrap: break-word;
-            white-space: pre-wrap;
-        }
-        .message.user {
-            align-self: flex-end;
-            background: linear-gradient(45deg, #cc0033, #990026);
-            color: white;
-            border-top-right-radius: 4px;
-        }
-        .message.bot {
-            align-self: flex-start;
-            background: white;
-            color: #1e293b;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-top-left-radius: 4px;
-        }
-        .chat-input {
-            display: flex;
-            gap: 0.6rem;
-            margin-top: 1rem;
-        }
-        .chat-input input[type="text"] {
-            flex: 1;
-            padding: 0.9rem 1rem;
-            border-radius: 9999px;
-            border: 1px solid #e2e8f0;
-            outline: none;
-            transition: box-shadow 0.2s ease, border-color 0.2s ease;
-        }
-        .chat-input input[type="text"]:focus {
-            border-color: #cc0033;
-            box-shadow: 0 0 0 3px rgba(204, 0, 51, 0.12);
-        }
-        .send-btn {
-            padding: 0.9rem 1.3rem;
-            border-radius: 9999px;
-            border: none;
-            color: white;
-            background: linear-gradient(45deg, #cc0033, #990026);
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(204, 0, 51, 0.35);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-        }
+        .message { max-width: 80%; padding: 0.6rem 0.9rem; border-radius: 12px; line-height: 1.5; font-size: 0.98rem; word-wrap: break-word; white-space: pre-wrap; }
+        .message.user { align-self: flex-end; background: linear-gradient(45deg, #cc0033, #990026); color: #fff; border-top-right-radius: 4px; }
+        .message.bot { align-self: flex-start; background: #fff; color: #1e293b; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-top-left-radius: 4px; }
+        .chat-input { display: flex; gap: 0.6rem; margin-top: 1rem; }
+        .chat-input input[type="text"] { flex: 1; padding: 0.9rem 1rem; border-radius: 9999px; border: 1px solid #e2e8f0; outline: none; transition: box-shadow 0.2s ease, border-color 0.2s ease; }
+        .chat-input input[type="text"]:focus { border-color: #cc0033; box-shadow: 0 0 0 3px rgba(204, 0, 51, 0.12); }
+        .send-btn { padding: 0.9rem 1.3rem; border-radius: 9999px; border: none; color: #fff; background: linear-gradient(45deg, #cc0033, #990026); font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(204, 0, 51, 0.35); transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease; }
         .send-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(204, 0, 51, 0.45); }
         .send-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
-        .typing-indicator {
-            align-self: flex-start;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 768px) {
-            .chat-messages { height: 360px; }
-            .message { max-width: 90%; }
-        }
+        .typing-indicator { align-self: flex-start; color: #64748b; font-size: 0.9rem; }
+        @media (max-width: 768px) { .chat-messages { height: 360px; } .message { max-width: 90%; } }
 
     </style>
 </head>
@@ -896,7 +883,6 @@
                 <li><a href="#timeline">Timeline</a></li>
                 <li><a href="#awards">Awards</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#chatbot">Agent</a></li>
                 <li><a href="#contact">Contact</a></li>
                 
             </ul>
@@ -1251,19 +1237,7 @@
         </div>
     </section>
 
-    <!-- Agent Section -->
-    <section id="agent" class="agent">
-        <div class="container">
-            <h2 class="section-title animate-in">Agent</h2>
-            <div class="agent-card about-card animate-in">
-                <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
-                <form id="chatForm" class="chat-input" autocomplete="off">
-                    <input id="chatInput" type="text" placeholder="Ask about my experience, projects, or skills" aria-label="Message" required>
-                    <button id="sendBtn" class="send-btn" type="submit">Send</button>
-                </form>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1279,6 +1253,24 @@
             </div>
         </div>
     </section>
+
+    <!-- Floating Chat Launcher -->
+    <button id="chatFab" class="chat-fab" aria-label="Open Agent">💬</button>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="chat-modal" aria-hidden="true">
+        <div class="chat-modal-content" role="dialog" aria-modal="true" aria-labelledby="chatModalTitle">
+            <div class="chat-modal-header">
+                <h3 id="chatModalTitle">Agent</h3>
+                <button id="chatClose" class="chat-close" aria-label="Close">×</button>
+            </div>
+            <div id="chatMessagesModal" class="chat-messages" aria-live="polite"></div>
+            <form id="chatFormModal" class="chat-input" autocomplete="off">
+                <input id="chatInputModal" type="text" placeholder="Ask about my experience, projects, or skills" aria-label="Message" required>
+                <button id="sendBtnModal" class="send-btn" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling for navigation links
@@ -1335,78 +1327,129 @@
             });
         });
 
-       
+        // Agent: API base URL
         const API_BASE_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:')
             ? 'http://127.0.0.1:9000'
             : 'https://portfolio-agent-ym3om.ondigitalocean.app';
-        
-        console.log('Current hostname:', location.hostname);
-        console.log('Current protocol:', location.protocol);
-        console.log('API_BASE_URL:', API_BASE_URL);
 
-        // Agent logic
-        const chatForm = document.getElementById('chatForm');
-        if (chatForm) {
-            const chatMessages = document.getElementById('chatMessages');
-            const chatInput = document.getElementById('chatInput');
-            const sendBtn = document.getElementById('sendBtn');
+        function wireChat(formId, inputId, messagesId, sendBtnId) {
+            const form = document.getElementById(formId);
+            if (!form) return;
+            const messagesEl = document.getElementById(messagesId);
+            const inputEl = document.getElementById(inputId);
+            const sendBtnEl = document.getElementById(sendBtnId);
 
             function appendMessage(text, role = 'bot') {
                 const div = document.createElement('div');
                 div.className = `message ${role}`;
                 div.textContent = text;
-                chatMessages.appendChild(div);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
+                messagesEl.appendChild(div);
+                messagesEl.scrollTop = messagesEl.scrollHeight;
                 return div;
             }
 
             function setLoading(isLoading) {
-                sendBtn.disabled = isLoading;
+                if (sendBtnEl) sendBtnEl.disabled = isLoading;
             }
 
-            chatForm.addEventListener('submit', async (e) => {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const message = chatInput.value.trim();
+                const message = inputEl.value.trim();
                 if (!message) return;
 
                 appendMessage(message, 'user');
-                chatInput.value = '';
+                inputEl.value = '';
                 setLoading(true);
                 const typing = appendMessage('Typing…', 'bot');
                 typing.classList.add('typing-indicator');
 
                 try {
+                    console.log('Making API request to:', `${API_BASE_URL}/ask`);
+                    console.log('Request payload:', { question: message });
+                    
                     const resp = await fetch(`${API_BASE_URL}/ask`, {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
                         body: JSON.stringify({ question: message })
                     });
-
+                    
+                    console.log('Response status:', resp.status);
+                    console.log('Response headers:', resp.headers);
+                    
                     if (!resp.ok) {
-                        const text = await resp.text();
-                        throw new Error(text || `Request failed (${resp.status})`);
+                        const errorText = await resp.text();
+                        console.error('API Error Response:', errorText);
+                        throw new Error(`API Error (${resp.status}): ${errorText || 'Unknown error'}`);
                     }
+                    
                     const data = await resp.json();
+                    console.log('API Response data:', data);
+                    
                     typing.remove();
                     appendMessage(data.answer || 'No response received', 'bot');
                 } catch (err) {
                     typing.remove();
-                    appendMessage('Sorry, something went wrong. Please try again.', 'bot');
-                    console.error(err);
+                    console.error('Chat error:', err);
+                    
+                    // More specific error messages
+                    let errorMsg = 'Sorry, something went wrong. ';
+                    if (err.name === 'TypeError' && err.message.includes('fetch')) {
+                        errorMsg += 'Unable to connect to the server. Please check your internet connection.';
+                    } else if (err.message.includes('CORS')) {
+                        errorMsg += 'Cross-origin request blocked. The API server may have CORS issues.';
+                    } else if (err.message.includes('404')) {
+                        errorMsg += 'API endpoint not found. The server may be misconfigured.';
+                    } else if (err.message.includes('500')) {
+                        errorMsg += 'Server error. Please try again later.';
+                    } else {
+                        errorMsg += 'Please try again.';
+                    }
+                    
+                    appendMessage(errorMsg, 'bot');
                 } finally {
                     setLoading(false);
-                    chatInput.focus();
+                    inputEl.focus();
                 }
             });
 
-            // Send on Enter without shift
-            chatInput.addEventListener('keydown', (e) => {
+            inputEl.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
                     e.preventDefault();
-                    chatForm.requestSubmit();
+                    form.requestSubmit();
                 }
             });
         }
+
+        // Wire modal agent
+        wireChat('chatFormModal', 'chatInputModal', 'chatMessagesModal', 'sendBtnModal');
+
+        // Floating chat modal controls
+        const chatFab = document.getElementById('chatFab');
+        const chatModal = document.getElementById('chatModal');
+        const chatClose = document.getElementById('chatClose');
+
+        function openChatModal() {
+            chatModal.classList.add('open');
+            chatModal.setAttribute('aria-hidden', 'false');
+            document.getElementById('chatInputModal')?.focus();
+        }
+        function closeChatModal() {
+            chatModal.classList.remove('open');
+            chatModal.setAttribute('aria-hidden', 'true');
+        }
+        chatFab?.addEventListener('click', openChatModal);
+        chatClose?.addEventListener('click', closeChatModal);
+        // Close popover on outside click or Escape
+        document.addEventListener('click', (e) => {
+            const content = document.querySelector('#chatModal .chat-modal-content');
+            if (chatModal.classList.contains('open') && content && !content.contains(e.target) && e.target !== chatFab) {
+                closeChatModal();
+            }
+        });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && chatModal.classList.contains('open')) closeChatModal(); });
     </script>
 </body>
 </html>
