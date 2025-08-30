@@ -55,9 +55,11 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 let API_BASE_URL;
 
-API_BASE_URL = 'https://portfolio-agent-ym3om.ondigitalocean.app';
-
-//API_BASE_URL = 'http://127.0.0.1:9000';
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:') {
+    API_BASE_URL = 'http://127.0.0.1:9000';
+} else {
+    API_BASE_URL = 'https://portfolio-agent-ym3om.ondigitalocean.app';
+}
 
 function wireChat(formId, inputId, messagesId, sendBtnId) {
     const form = document.getElementById(formId);
