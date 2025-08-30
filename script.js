@@ -52,17 +52,13 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Agent: API base URL
-// Agent: API base URL
 
 let API_BASE_URL;
 
 API_BASE_URL = 'https://portfolio-agent-ym3om.ondigitalocean.app';
 
-if (location.hostname === '127.0.0.1' || location.protocol === 'file:') {
-    API_BASE_URL = 'http://127.0.0.1:9000';
-} 
-    
+//API_BASE_URL = 'http://127.0.0.1:9000';
+
 function wireChat(formId, inputId, messagesId, sendBtnId) {
     const form = document.getElementById(formId);
     if (!form) return;
