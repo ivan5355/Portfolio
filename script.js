@@ -54,13 +54,15 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // Agent: API base URL
 // Agent: API base URL
+
 let API_BASE_URL;
+
+API_BASE_URL = 'https://portfolio-agent-ym3om.ondigitalocean.app';
+
 if (location.hostname === '127.0.0.1' || location.protocol === 'file:') {
     API_BASE_URL = 'http://127.0.0.1:9000';
-} else {
-    API_BASE_URL = 'https://portfolio-agent-ym3om.ondigitalocean.app';
-}
-
+} 
+    
 function wireChat(formId, inputId, messagesId, sendBtnId) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -109,7 +111,13 @@ function wireChat(formId, inputId, messagesId, sendBtnId) {
             console.log('Response headers:', resp.headers);
             
             if (!resp.ok) {
-                const errorText = await resp.text();
+                let errorText = '';
+                try {
+                    const errJson = await resp.json();
+                    errorText = errJson?.error || JSON.stringify(errJson);
+                } catch (_) {
+                    errorText = await resp.text();
+                }
                 console.error('API Error Response:', errorText);
                 throw new Error(`API Error (${resp.status}): ${errorText || 'Unknown error'}`);
             }
@@ -118,7 +126,7 @@ function wireChat(formId, inputId, messagesId, sendBtnId) {
             console.log('API Response data:', data);
             
             typing.remove();
-            appendMessage(data.answer || 'No response received', 'bot');
+            appendMessage((data && (data.answer || data.error)) || 'No response received', 'bot');
         } catch (err) {
             typing.remove();
             console.error('Chat error:', err);
