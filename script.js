@@ -53,9 +53,13 @@ document.querySelectorAll('.project-card').forEach(card => {
 });
 
 // Agent: API base URL
-const API_BASE_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:')
-    ? 'http://127.0.0.1:9000'
-    : 'https://portfolio-agent-ym3om.ondigitalocean.app';
+// Agent: API base URL
+let API_BASE_URL;
+if (location.hostname === '127.0.0.1' || location.protocol === 'file:') {
+    API_BASE_URL = 'http://127.0.0.1:9000';
+} else {
+    API_BASE_URL = 'https://portfolio-agent-ym3om.ondigitalocean.app';
+}
 
 function wireChat(formId, inputId, messagesId, sendBtnId) {
     const form = document.getElementById(formId);
@@ -178,4 +182,4 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && chatModal.classList.contains('open')) closeChatModal(); });
 
-document.getElementById('openAgentBtn')?.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); if (typeof openChatModal === 'function') openChatModal(); });
+document.getElementById('openAgentBtn')?.addEventListener('click', (e) => { e.preventDefault(); if (typeof openChatModal === 'function') openChatModal(); });
